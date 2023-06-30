@@ -1459,6 +1459,8 @@ private:
     template <typename Output, typename Cmd, typename ...Args>
     ReplyUPtr _score_command(Cmd cmd, Args &&... args);
 
+    int command_retry() { return _pool->command_retry(); }
+
     ShardsPoolUPtr _pool;
 };
 

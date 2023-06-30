@@ -69,6 +69,8 @@ public:
 
     std::vector<ConnectionPoolSPtr> pools();
 
+    int command_retry() { return _connection_opts.command_retry; }
+
     void async_update();
 
 private:
@@ -108,6 +110,8 @@ private:
     void _run();
 
     void _do_async_update();
+
+    int shards_update_retry() { return _connection_opts.shards_update_retry; }
 
     ConnectionPoolOptions _pool_opts;
 
